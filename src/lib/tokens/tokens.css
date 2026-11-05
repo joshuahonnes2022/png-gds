@@ -1,0 +1,175 @@
+/* ==========================================================================
+   PNG-GDS Design Tokens  v0.1.0
+   Source of truth for colour, type, spacing, radius, shadow and motion.
+   Every component reads from these variables — never hard-code values.
+   Mirrored in tokens.json for Figma / Tokens Studio import.
+   ========================================================================== */
+
+:root {
+  /* Colours follow the DICT Brand Strategy: primary orange / deep orange
+     gradient and navy; secondary yellow, green, blue, purple; grey. */
+
+  /* ---- Brand primary: Deep Orange ------------------------------------- */
+  --pngds-orange-50:  #FBEDEB;
+  --pngds-orange-100: #F6D4CF;
+  --pngds-orange-200: #EBA89F;
+  --pngds-orange-500: #D55345;   /* DICT deep orange — banners, high-impact surfaces (white text >= 24px / 19px bold only) */
+  --pngds-orange-600: #B8412F;   /* text-safe deep orange: 5.5:1 on white */
+  --pngds-orange-700: #9C3628;
+  --pngds-orange-800: #6E2419;
+
+  /* ---- Brand primary: Orange (logo gradient partner) ------------------ */
+  --pngds-amber-100: #FDE5D3;
+  --pngds-amber-400: #ED7D31;    /* DICT orange — accents and gradients, never as text on white */
+  --pngds-amber-700: #A4521A;
+
+  /* ---- Brand primary: Navy -------------------------------------------- */
+  --pngds-navy-50:  #E9EDF5;
+  --pngds-navy-100: #C8D2E6;
+  --pngds-navy-600: #2C4A80;
+  --pngds-navy-700: #203864;     /* DICT navy — buttons, navigation, footer (11.6:1 with white) */
+  --pngds-navy-800: #172A4D;
+  --pngds-navy-900: #0F1D36;
+
+  /* ---- Brand secondary ------------------------------------------------- */
+  --pngds-yellow-50:  #FFFDE0;
+  --pngds-yellow-100: #FFF9A8;
+  --pngds-yellow-300: #FFF35A;
+  --pngds-yellow-400: #FFFF00;   /* DICT yellow — call-to-action accent and focus; on dark/navy only */
+  --pngds-yellow-600: #B3A100;
+  --pngds-yellow-800: #5C5300;
+  --pngds-teal-500:   #2C9EAA;   /* DICT green */
+  --pngds-blue-500:   #2E75B6;   /* DICT blue */
+  --pngds-purple-500: #793F43;   /* DICT purple */
+  --pngds-grey-500:   #7F7F7F;   /* DICT grey */
+
+  /* ---- Neutrals: Night (flag black) ----------------------------------- */
+  --pngds-neutral-0:   #FFFFFF;
+  --pngds-neutral-50:  #F7F7F5;
+  --pngds-neutral-100: #EEEEEA;
+  --pngds-neutral-200: #DDDCD6;
+  --pngds-neutral-300: #C2C1BA;
+  --pngds-neutral-500: #6F6E68;
+  --pngds-neutral-600: #55544F;
+  --pngds-neutral-700: #3F3E3A;
+  --pngds-neutral-800: #2B2A27;
+  --pngds-neutral-900: #1A1A1A;
+
+  /* ---- Ocean (links & information) — based on DICT blue ---------------- */
+  --pngds-ocean-50:  #EAF2FA;
+  --pngds-ocean-100: #CFE0F1;
+  --pngds-ocean-600: #2E75B6;
+  --pngds-ocean-700: #245E93;
+  --pngds-ocean-800: #1B4672;
+
+  /* ---- Semantic status ------------------------------------------------ */
+  --pngds-success-50:  #E7F4EB;
+  --pngds-success-600: #1E7B3A;
+  --pngds-success-800: #12502A;
+  --pngds-warning-50:  #FFF4D6;
+  --pngds-warning-500: #E0A100;
+  --pngds-warning-800: #6B4700;
+  --pngds-error-50:    #FDECEA;
+  --pngds-error-600:   #B42318;
+  --pngds-error-800:   #7A1810;
+  --pngds-info-50:     var(--pngds-ocean-50);
+  --pngds-info-600:    var(--pngds-ocean-600);
+  --pngds-info-800:    var(--pngds-ocean-800);
+
+  /* ---- Role aliases (use these in components) ------------------------- */
+  --pngds-color-text:            var(--pngds-neutral-900);
+  --pngds-color-text-secondary:  var(--pngds-neutral-600);
+  --pngds-color-text-inverse:    var(--pngds-neutral-0);
+  --pngds-color-bg:              var(--pngds-neutral-0);
+  --pngds-color-bg-subtle:       var(--pngds-neutral-50);
+  --pngds-color-bg-muted:        var(--pngds-neutral-100);
+  --pngds-color-bg-inverse:      var(--pngds-navy-700);
+  --pngds-color-border:          var(--pngds-neutral-300);
+  --pngds-color-border-strong:   var(--pngds-neutral-700);
+  --pngds-color-border-input:    var(--pngds-neutral-600); /* 3:1+ non-text contrast for form controls */
+  --pngds-color-primary:         var(--pngds-navy-700);    /* buttons and main actions */
+  --pngds-color-primary-hover:   var(--pngds-navy-900);
+  --pngds-color-primary-subtle:  var(--pngds-navy-50);
+  --pngds-color-brand:           var(--pngds-orange-500);  /* banners, highlights, active indicators */
+  --pngds-color-brand-text:      var(--pngds-orange-600);  /* orange text on white */
+  --pngds-color-brand-subtle:    var(--pngds-orange-50);
+  --pngds-color-brand-gradient:  linear-gradient(90deg, var(--pngds-orange-500), var(--pngds-amber-400));
+  --pngds-color-accent:          var(--pngds-yellow-400);
+  --pngds-color-link:            var(--pngds-ocean-600);
+  --pngds-color-link-hover:      var(--pngds-navy-700);
+  --pngds-color-link-visited:    var(--pngds-purple-500);
+  --pngds-color-focus:           var(--pngds-yellow-400);
+  --pngds-color-focus-outline:   var(--pngds-neutral-900);
+
+  /* ---- Typography ----------------------------------------------------- */
+  /* System font stack: zero font downloads for low-bandwidth users. */
+  --pngds-font-sans: "Noto Sans", "Segoe UI", Roboto, "Helvetica Neue", Arial, system-ui, sans-serif;
+  --pngds-font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+
+  --pngds-font-size-xs:  0.8125rem; /* 13 */
+  --pngds-font-size-sm:  0.9375rem; /* 15 */
+  --pngds-font-size-md:  1.0625rem; /* 17 — body */
+  --pngds-font-size-lg:  1.25rem;   /* 20 */
+  --pngds-font-size-xl:  1.5rem;    /* 24 — h3 */
+  --pngds-font-size-2xl: 1.875rem;  /* 30 — h2 */
+  --pngds-font-size-3xl: 2.375rem;  /* 38 — h1 */
+  --pngds-font-size-4xl: 3rem;      /* 48 — display */
+
+  --pngds-font-weight-regular: 400;
+  --pngds-font-weight-semibold: 600;
+  --pngds-font-weight-bold: 700;
+
+  --pngds-line-height-tight: 1.2;
+  --pngds-line-height-snug: 1.35;
+  --pngds-line-height-body: 1.6;
+  --pngds-measure: 68ch; /* max line length for reading */
+
+  /* ---- Spacing (4px base) --------------------------------------------- */
+  --pngds-space-0:  0;
+  --pngds-space-1:  0.25rem; /* 4 */
+  --pngds-space-2:  0.5rem;  /* 8 */
+  --pngds-space-3:  0.75rem; /* 12 */
+  --pngds-space-4:  1rem;    /* 16 */
+  --pngds-space-5:  1.5rem;  /* 24 */
+  --pngds-space-6:  2rem;    /* 32 */
+  --pngds-space-7:  3rem;    /* 48 */
+  --pngds-space-8:  4rem;    /* 64 */
+  --pngds-space-9:  6rem;    /* 96 */
+
+  /* ---- Layout --------------------------------------------------------- */
+  --pngds-container-max: 76rem;   /* 1216px */
+  --pngds-gutter: var(--pngds-space-4);
+  --pngds-touch-target: 2.75rem;  /* 44px minimum (WCAG 2.5.8 recommends >=24, we go further) */
+
+  /* ---- Shape ---------------------------------------------------------- */
+  --pngds-radius-none: 0;
+  --pngds-radius-sm: 4px;
+  --pngds-radius-md: 8px;
+  --pngds-radius-lg: 12px;
+  --pngds-radius-pill: 999px;
+  --pngds-border-width: 1px;
+  --pngds-border-width-thick: 2px;
+
+  /* ---- Elevation ------------------------------------------------------ */
+  --pngds-shadow-1: 0 1px 2px rgba(26, 26, 26, 0.10);
+  --pngds-shadow-2: 0 2px 8px rgba(26, 26, 26, 0.12);
+  --pngds-shadow-3: 0 8px 24px rgba(26, 26, 26, 0.16);
+
+  /* ---- Motion --------------------------------------------------------- */
+  --pngds-duration-fast: 120ms;
+  --pngds-duration-base: 200ms;
+  --pngds-easing: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Breakpoints (for reference — CSS variables can't be used in media queries)
+   sm  >= 36rem  (576px)   large phones
+   md  >= 48rem  (768px)   tablets
+   lg  >= 64rem  (1024px)  laptops
+   xl  >= 80rem  (1280px)  desktops                                         */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --pngds-duration-fast: 0ms;
+    --pngds-duration-base: 0ms;
+  }
+}

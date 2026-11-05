@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="PNG Government Digital Design System — design foundations, components, patterns and templates for Papua New Guinea Government digital services." />
+    <meta name="theme-color" content="#0F1D36" />
+    <link rel="icon" href="./favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <title>PNG Government Digital Design System</title>
+  </head>
+  <body>
+    <noscript>This site needs JavaScript enabled to show the design system documentation.</noscript>
+    <div id="root">
+      <!-- Replaced by React when the app loads. Only becomes visible if the app fails to start. -->
+      <div style="font-family:system-ui,sans-serif;max-width:40rem;margin:4rem auto;padding:1.5rem;border-left:6px solid #D55345;background:#FBEDEB;opacity:0;animation:pngds-show 0s 3s forwards">
+        <h1 style="margin:0 0 .5rem;font-size:1.4rem">The design system could not start</h1>
+        <p style="margin:0 0 .5rem">If you are using XAMPP, you have probably copied the <strong>source project</strong>. Apache needs the <strong>built site</strong>:</p>
+        <ol style="margin:0;padding-left:1.25rem"><li>Run <code>npm run build</code> (or use the ready-built folder)</li><li>Copy the <strong>contents of <code>dist/</code></strong> into <code>htdocs/pngds/</code></li><li>Reload this page</li></ol>
+      </div>
+      <style>@keyframes pngds-show{to{opacity:1}}</style>
+      <script>
+        // Opened by double-clicking index.html (file://)? Browsers block the app there — explain that instead.
+        if (location.protocol === 'file:') {
+          document.currentScript.parentNode.querySelector('div').innerHTML =
+            '<h1 style="margin:0 0 .5rem;font-size:1.4rem">Open this site through XAMPP</h1>' +
+            '<p style="margin:0 0 .5rem">This page was opened directly from the disk (the address starts with <code>C:/</code> or <code>file://</code>). Browsers block the design system when opened this way.</p>' +
+            '<ol style="margin:0;padding-left:1.25rem"><li>Start <strong>Apache</strong> in the XAMPP Control Panel</li><li>Go to <a href="http://localhost/pngds/"><strong>http://localhost/pngds/</strong></a></li></ol>';
+        }
+      </script>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
